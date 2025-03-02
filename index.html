@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Fun Fact</h2>
+    <p id="funFact">Click the button to generate a fun fact!</p>
+    <button class="button" onclick="generateFunFact()">Generate Fun Fact</button>
+</div>
+
+<script>
+    const funFacts = [
+        "Python was named after the British comedy television show 'Monty Python's Flying Circus.'",
+        "JavaScript was originally created in just 10 days by Brendan Eich in 1995.",
+        "HTML stands for HyperText Markup Language.",
+        "CSS stands for Cascading Style Sheets.",
+        "The first computer programmer was Ada Lovelace.",
+        "The term 'bug' was popularized by Grace Hopper when she found a moth in a computer."
+    ];
+
+    function generateFunFact() {
+        const randomIndex = Math.floor(Math.random() * funFacts.length);
+        document.getElementById('funFact').innerText = funFacts[randomIndex];
+    }
+</script>
+
+</body>
+</html>
